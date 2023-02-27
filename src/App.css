@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+
+*{
+ margin: 0px;
+ padding: 0px;
+ box-sizing: border-box;
+}
+
+
+:root {
+	--primary: #6CDDC9;
+	--secondary: #8A4EFC;
+	--light: #EEE;
+	--light-alt: #61759b;
+	--dark: #18202c;
+  --dark-alt: #202B3E;
+}
+
+body{
+ color: var(--light);
+ font-family: 'PT Sans Narrow', sans-serif;
+ background-color: var(--dark);
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+}
+
+#root {
+  max-width: 1280px;
+  width: 460px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0; 
+  padding: 0rem;
+  font-family: sans-serif;
+  background-color: var(--dark-alt);
+  box-shadow: 0px 0px 30px -7px rgba(0, 0, 0, 0.658);
+}
+
+
+h1{
+ font-weight: 300;
+ color: var(--light);
+ font-size: 3rem;
+ text-align: center;
+}
+
+p{
+ color: var(--light);
+}
+#register{
+ height: 100vh;
+ width: 460px;
+ padding: 2rem;
+ background-color: var(--dark-alt);
+}
+
+#register h1{
+ text-align: center;
+}
+#register p,#login p{
+ text-align: center;
+ text-transform: capitalize;
+ margin: 10px;
+ color: var(--primary);
+ font-size: 16px;
+}
+
+.register_form{
+ display: flex;
+ margin: 10px;
+ flex-direction: column;/* 
+ align-items: center; */
+ justify-content: center;
+}
+
+.input-box{
+ margin-top: 35px;
+ border-bottom: 2px solid var(--light);
+ display: flex;
+ align-items: center;
+}
+
+.input-box svg{
+ width: 34px;
+ height: 25px;
+ color: var(--primary);
+}
+
+.input-box:hover{
+ border-bottom: 2px solid var(--primary);
+}
+
+.input{
+  font-size: 1.2rem;
+  width: 100%;
+ color: white;
+ background-color: transparent;
+ outline: none;
+ border: none;
+ padding-top: 10px;
+ padding-bottom: 5px;
+}
+
+::placeholder {
+  opacity: 0.7;
+  color: var(--light);
+}
+
+.signin_btn, .login_btn{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 0.4rem;
+ margin-top: 30px;
+ font-size: 20px;
+ color: var(--light);
+ border: none;
+ border-radius: 1.2rem;
+ background-color: var(--primary);
+}
+
+.signin_btn svg, .login_btn svg{
+ width: 25px;
+ height: 25px;
+}
+
+.signin_btn:hover, .login_btn:hover{
+ color: var(--primary);
+ background-color: var(--light);
+}
+
+span{
+ margin: 10px;
+ font-size: 14px;
+ text-align: center;
+ display: block;
+ width: 100%;
+ color: var(--light);
+}
+
+span a{
+ text-decoration: none;
+ color: var(--primary);
+}
+
+/* login style */
+
+
+#login{
+ height: 100vh;
+ width: 460px;
+ padding: 2rem;
+}
+
+#login_form{
+  margin-top: 20px;
+}
+
+
+.login_btn{
+ display: flex;
+ align-items: center;
+ margin-inline: 0px;
+ width: 100%;
+}
+
+/* main page */
+
+#container{
+ padding: 2rem;
+ position: relative;
+ height: 100vh;
+ width: 460px;
+ display: flex;
+ flex-direction: column;
+}
+
+.logout_btn{
+ position: fixed;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ top: 1rem;
+ right: 1rem;
+ background-color: #F73131;
+ border: none;
+ outline: none;
+ color: var(--light);
+ padding: 7px;
+ border-radius: 50%;
+}
+
+.logout_btn svg{
+ height: 20px;
+ width: 20px;
+}
+
+.todolist{
+ margin-top: 20px;
+ overflow-y: scroll;
+}
+
+.todo{
+  position: relative;
+  background-color: var(--dark);
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+  cursor: pointer;
+  margin-bottom: 16px;
+  text-transform: capitalize;
+}
+
+.delete_todo{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 16px;
+  color: var(--light);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #F73131;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 3px;
+}
+
+.delete_todo svg{
+ height: 25px;
+ width: 25px;
+}
+
+#container>p{
+ color: var(--primary);
+ font-size: 18px;
+ margin: 10px;
+text-align: center;
+font-weight: 400;
+}
+
+.plus_btn{
+ position: fixed;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 7px;
+ background-color: var(--primary);
+ right: 2rem;
+ bottom: 2rem;
+ border: none;
+ border-radius: 50%;
+}
+
+.plus_btn svg{
+ color: var(--light);
+ width: 20px;
+ height: 20px;
+}
+
+.todo .checkbox {
+  width: 20px;
+  height: 20px;
+  border: none;
+  margin-right: 8px;
+  border-radius: 50%;
+  background-color: var(--dark-alt);
+  transition: 0.4s;
+}
+
+.text{
+ font-size: 20px;
+}
+
+.todo.completeTodo .checkbox{
+ background-color: var(--primary);
+}
+
+.todo.completeTodo .text{
+ opacity: 0.7;
+ text-decoration: line-through;
+}
+
+
+.popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	width: 100%;
+	max-width: 400px;
+	background-color: var(--light);
+	padding: 32px;
+	border-radius: 16px;
+	box-shadow: 0px 4px 32px var(--dark);
+}
+
+.popup h3 {
+	color: var(--dark);
+    text-align: center;
+	margin-bottom: 16px;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+.closePopup {
+	position: absolute;
+  border: none;
+  color: var(--light-alt);
+	top: 16px;
+	right: 16px;
+	width: 20px;
+	height: 20px;
+	font-size: 26px;
+	cursor: pointer;
+}
+
+.closePopup svg{
+ transform: rotate(45deg);
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+ }
+
+ .add-todo-input {
+	appearance: none;
+	outline: none;
+	border: none;
+	background-color: #FFF;
+	padding: 16px;
+	border-radius: 16px;
+	width: 100%;
+	box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.2);
+	font-size: 20px;
+}
+
+.button {
+  color: var(--light);
+	padding: 16px 32px;
+	border-radius: 999px;
+  border: none;
+	background-color: var(--primary);
+	display: inline-block;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 18px;
+	margin-top: 16px;
+	margin-inline: auto;
+	text-align: center;
+	cursor: pointer;
+}
+
+.logoutPopup > .content .button{
+ background-color: #F73131;
+}
+
+/* media queary */
+
+
+@media(max-width: 500px){
+  :root {
+    --dark-alt: #33435A;
+  }
+
+  #root,#register,#login,#container{
+  width: 100vw;
+  padding: 10px;
+  }
+
+  .popup{
+   max-width: 350px;
+  }
+
+h1{
+ font-size: 2.4rem;
+}
+
+.text{
+ font-size: 16px;
+}
+.todo{
+ padding: 10px;
+}
+
+.plus_btn{ 
+ right: 1rem;
+ bottom: 1rem;
+ padding: 4px;
+}
+
+.todolist{
+ margin-top: 10px;
+}
+}
