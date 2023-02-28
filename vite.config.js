@@ -4,14 +4,15 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server:{
+    server:{
     proxy:{
      '/api':{
-      target: 'https://todoappbackend-iqk3.onrender.com',
+     target: 'https://todoappbackend-iqk3.onrender.com',
+     /* target: 'http://localhost:3000/',*/
       changeOrigin: true,
         secure: false,
         rewrite: path => path.replace('/api', '')
      }
     }
-  }
+  } 
 })
