@@ -4,6 +4,7 @@ import {Link, useNavigate } from 'react-router-dom';
 import {CiLock,CiMail} from 'react-icons/ci'
 import {BiLogIn} from 'react-icons/bi'
  
+const api = 'https://todoappbackend-iqk3.onrender.com';
 /**/
 export const Login = () => { 
  const navigate = useNavigate();
@@ -24,7 +25,7 @@ const requestOptions = {
    password })
 };
 //const res = await fetch('/api/auth/login', requestOptions);
-const res = await fetch('http://localhost:3000/auth/login', requestOptions);
+const res = await fetch(`${api}/auth/login`, requestOptions);
 
 const resdata = await res;
 console.log(resdata.status)

@@ -8,9 +8,10 @@ export const Register = () => {
  const [user,setUser] = useState('');
  const [email,setEmail] = useState('');
  const [password,setPassword] = useState('');
+ const api = 'https://todoappbackend-iqk3.onrender.com';
 
 const postRegister =async ()=>{
-    const res = await fetch(`http://localhost:3000/auth/register`,{method:'POST',
+    const res = await fetch(`${api}/auth/register`,{method:'POST',
     headers:{
      'Content-Type':"application/json"
     },
