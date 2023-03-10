@@ -48,7 +48,7 @@ export const Home = () => {
         title:newTodo
        })
     };
-    const res = await fetch('/api/task/new', requestOptions);
+    const res = await fetch('http://localhost:3000/task/new', requestOptions);
 
     const data = await res.json();
     setTodos([...todos,data]);
@@ -57,7 +57,7 @@ export const Home = () => {
  };
 
  const completeTodo =async(id)=>{
- const res = await fetch(`/api/task/complete/${id}`);
+ const res = await fetch(`http://localhost:3000/task/complete/${id}`);
 
  const data = await res.json();
 
@@ -70,14 +70,14 @@ export const Home = () => {
  }
 
  const deleteTodo = async(id)=>{
-   const res = await fetch(`/api/task/delete/${id}`, {method:'DELETE'});
+   const res = await fetch(`http://localhost:3000/task/delete/${id}`, {method:'DELETE'});
    const data =await res.json();
 
    setTodos(todos=> todos.filter(todo=> todo._id !== data._id));  
  };
 
  const logout = async()=>{
- const res = await fetch('/api/auth/logout');
+ const res = await fetch('http://localhost:3000/auth/logout');
 
  const data = await res;
  console.log(data.status)
