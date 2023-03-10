@@ -23,7 +23,8 @@ const requestOptions = {
    email,
    password })
 };
-const res = await fetch('/api/auth/login', requestOptions)
+//const res = await fetch('/api/auth/login', requestOptions);
+const res = await fetch('http://localhost:3000/auth/login', requestOptions);
 
 const resdata = await res;
 console.log(resdata.status)

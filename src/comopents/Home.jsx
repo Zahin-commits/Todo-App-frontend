@@ -11,7 +11,9 @@ export const Home = () => {
 
    useEffect(()=>{(
       async()=>{
-         const res = await fetch('/api/auth/isLoggedIn');
+         const res = await fetch('http://localhost:3000/auth/isLoggedIn',{
+          credentials: 'include'
+        });
          const data = await res.json()
         setAuth(data)
       }
@@ -29,7 +31,9 @@ export const Home = () => {
    console.log(auth)
 
  const getTodos = async()=>{
-  const res = await fetch('/api/task');
+  const res = await fetch('http://localhost:3000/task',{
+    credentials: 'include'
+  });
   const data = await res.json();
   console.log(data)
   setTodos(data)
