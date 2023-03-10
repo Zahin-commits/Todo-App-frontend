@@ -7,8 +7,8 @@ export default defineConfig({
     server:{
     proxy:{
      '/api':{
-     target: 'https://todoappbackend-iqk3.onrender.com',
-     /* target: 'http://localhost:3000/',*/
+      /* target: 'https://todoappbackend-iqk3.onrender.com', */
+      target: 'http://localhost:3000/',
       changeOrigin: true,
         secure: false,
         rewrite: path => path.replace('/api', '')
