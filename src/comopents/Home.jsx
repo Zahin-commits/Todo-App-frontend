@@ -9,6 +9,7 @@ export const Home = () => {
  const [logoutPopup, setLogoutPopup] = useState(false);
  const [newTodo, setNewTodo] = useState("");
  const api = 'https://todoappbackend-iqk3.onrender.com';
+ //const api = 'http://localhost:3000';
    useEffect(()=>{(
       async()=>{
          const res = await fetch(`${api}/auth/isLoggedIn`,{
@@ -28,14 +29,14 @@ export const Home = () => {
  } */
   
  
-   console.log(auth)
+   //console.log(auth)
 
  const getTodos = async()=>{
   const res = await fetch(`${api}/task`,{
     credentials: 'include'
   });
   const data = await res.json();
-  console.log(data)
+  //console.log(data)
   setTodos(data)
  /*  setTodos(await res.json()); */
  };
@@ -46,7 +47,8 @@ export const Home = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ 
         title:newTodo
-       })
+       }),
+       credentials: 'include',
     };
     const res = await fetch(`${api}/task/new`, requestOptions);
 
@@ -57,7 +59,7 @@ export const Home = () => {
  };
 
  const completeTodo =async(id)=>{
- const res = await fetch(`${api}/task/complete/${id}`);
+ const res = await fetch(`${api}/task/complete/${id}`, { credentials: 'include'},);
 
  const data = await res.json();
 
@@ -70,14 +72,14 @@ export const Home = () => {
  }
 
  const deleteTodo = async(id)=>{
-   const res = await fetch(`${api}/task/delete/${id}`, {method:'DELETE'});
+   const res = await fetch(`${api}/task/delete/${id}`, {method:'DELETE',  credentials: 'include',});
    const data =await res.json();
 
    setTodos(todos=> todos.filter(todo=> todo._id !== data._id));  
  };
 
  const logout = async()=>{
- const res = await fetch(`${api}/auth/logout`);
+ const res = await fetch(`${api}/auth/logout`,{  credentials: 'include'});
 
  const data = await res;
  console.log(data.status)

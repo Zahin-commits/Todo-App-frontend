@@ -9,6 +9,7 @@ export const Register = () => {
  const [email,setEmail] = useState('');
  const [password,setPassword] = useState('');
  const api = 'https://todoappbackend-iqk3.onrender.com';
+ //const api = 'http://localhost:3000';
 
 const postRegister =async ()=>{
     const res = await fetch(`${api}/auth/register`,{method:'POST',
@@ -19,7 +20,8 @@ const postRegister =async ()=>{
         name:user,
         email:email,
         password:password
-    })
+    }),
+    credentials: 'include',
     })
  const data = await res;
 console.log(data.status)

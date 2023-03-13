@@ -5,6 +5,7 @@ import {CiLock,CiMail} from 'react-icons/ci'
 import {BiLogIn} from 'react-icons/bi'
  
 const api = 'https://todoappbackend-iqk3.onrender.com';
+//const api = 'http://localhost:3000';
 /**/
 export const Login = () => { 
  const navigate = useNavigate();
@@ -22,7 +23,8 @@ const requestOptions = {
  body: JSON.stringify({ 
   /*  name, */
    email,
-   password })
+   password }),
+   credentials: 'include',
 };
 //const res = await fetch('/api/auth/login', requestOptions);
 const res = await fetch(`${api}/auth/login`, requestOptions);
